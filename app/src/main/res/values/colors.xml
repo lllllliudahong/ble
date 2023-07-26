@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#0FCD6F</color>
+
+    <!--常规色-->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_background">#FFF5F5F5</color>  <!--浅色背景-->
+    <color name="color_line">#FFDBD9D9</color>  <!--浅色下划线-->
+    <color name="color_999999">#999999</color>
+    <color name="grey_f7">#f7f7f7</color>
+    <color name="grey_80">#FF808080</color>
+
+
+    <color name="deep">#08C165</color>
+    <color name="deep_1">#673B1D</color>
+    <color name="grey">#CCCCCC</color>
+    <color name="home_start_color">#1AD684</color>
+    <color name="home_end_color">#03BB5E</color>
+    <color name="color_FFFF8D1A">#FFFF8D1A</color>
+    <color name="greenDark">#388E3C</color>
+    <color name="greenPrimary">#4CAF50</color>
+    <color name="color_fff66a31">#FFF66A31</color>
+    <color name="color_ffa6a6a6">#FFA6A6A6</color>
+    <color name="color_ff919191">#FF919191</color>
+
+
+</resources>

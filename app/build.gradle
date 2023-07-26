@@ -1,0 +1,138 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'org.greenrobot.greendao'
+
+// 加载签名配置文件
+Properties props = new Properties()
+props.load(new FileInputStream(file("keystore.properties")))
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+//        versionName rootProject.ext.versionName+ "_" + releaseTime()
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        flavorDimensions "default"
+    }
+
+    signingConfigs {
+        // 正式包签名与测试包签名一般都用一个，如果需要多个，再复制一份进行修改
+        release {
+            /**
+             * FIXME 各项目自行创建签名文件和密码,并替换keystore.properties相关内容
+             * 配置信息从配置文件读取，这样会比较安全
+             * 1、keystore.properties文件可加入.gitignore文件，不上传到仓库，这样就不会泄露信息
+             *    但文件得在本地保管，可能会丢失，暂时还是上传到仓库中
+             * 2、密码用MD5 32位加密, 一般密码命名都有一定的规律，如果明文，易于把其他项目的密码泄露出去
+             */
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+            storeFile file(props['KEYSTORE_FILE'])
+            storePassword props['KEYSTORE_PASSWORD']
+
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        // debug模式测试环境， release模式正式环境
+        debug {
+//            buildConfigField "String", "DOMAIN", rootProject.ext.debugDomain
+            minifyEnabled false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            //applicationIdSuffix '.debug' 如需与正式包名区分，使用applicationIdSuffix
+        }
+        release {
+//            buildConfigField "String", "DOMAIN", rootProject.ext.releaseDomain
+            minifyEnabled false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    greendao {
+        schemaVersion 1
+        daoPackage 'com.czw.greendao.dao' // set package of generated classes
+        targetGenDir 'src/main/java'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation project(':rxNetGo_lib')
+    implementation project(path: ':bluetoothlib')
+    implementation files('libs\\mvp.aar')
+
+    ////MVP:https://gitee.com/miekir/easy-transfer/tree/master
+    // 工具
+    implementation 'com.blankj:utilcodex:1.31.0'
+    // 适配器
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    // loading组件
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+
+    //SP存储
+    implementation 'com.orhanobut:hawk:2.0.1'
+    //权限申请框架
+    implementation 'com.guolindev.permissionx:permissionx:1.6.4'
+    //侧滑
+    implementation 'com.github.anzaizai:EasySwipeMenuLayout:1.1.4'
+    //event bus
+    implementation("org.greenrobot:eventbus:3.3.1")
+    // greendao
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'io.github.yuweiguocn:GreenDaoUpgradeHelper:v2.2.1'
+    //joda-time
+    implementation 'joda-time:joda-time:2.10.1'
+    //首页圆形进度条
+    implementation 'me.hiennguyen.circleseekbar:circleseekbar:1.0.1'
+    //刷新控件核心必须依赖
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.1'
+    //经典刷新头
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.1'
+    //经典加载
+    implementation 'com.scwang.smart:refresh-footer-classics:2.0.1'
+    //扫码
+    implementation 'com.king.zxing:zxing-lite:1.1.9-androidx'
+}

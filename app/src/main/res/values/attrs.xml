@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--自定义主题属性-->
+    <attr name="colorWhite" format="color" />
+    <attr name="colorBlack" format="color" />
+    <attr name="toolbarBackground" format="color" />
+    <attr name="toolbarForeground" format="color" />
+
+    <!--谷歌下拉头属性-->
+    <declare-styleable name="MaterialHeader">
+        <attr name="mhPrimaryColor" format="color" />
+        <attr name="mhShadowColor" format="color" />
+        <attr name="mhShadowRadius" format="dimension" />
+        <attr name="mhShowBezierWave" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleProgress">
+        <attr name="centerTextColor" format="color"/>
+        <attr name="unFinishColor" format="color"/>
+        <attr name="finishColor" format="color"/>
+        <attr name="steps" format="integer"/>
+    </declare-styleable>
+
+    <!--    圆形头像-->
+    <declare-styleable name="RobotCircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+
+</resources>

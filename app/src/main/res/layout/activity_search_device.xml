@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <FrameLayout
+        android:id="@+id/flTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/bluetooth_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="bluetooth_search_title"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:padding="@dimen/dp_14"
+            android:id="@+id/iv_scan"
+            android:layout_gravity="right"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:src="@mipmap/scan" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_my_device_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="myDevice"
+            android:textColor="@color/black"
+            android:background="#F4F5F8"
+            android:paddingLeft="20dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/tvDeleteDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="unbindTips"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="@+id/tv_my_device_title"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_my_device_title"
+            app:layout_constraintRight_toRightOf="@+id/tv_my_device_title"
+            android:paddingRight="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout
+        android:id="@+id/esmMyDevice"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:contentView="@+id/content"
+        app:rightMenuView="@+id/delete"
+        app:layout_constraintTop_toBottomOf="@+id/tv_my_device_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/bluetooth_bracelet"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:text="vvvvvvvvvvvvvvvvvv"
+                app:layout_constraintLeft_toRightOf="@id/iv_icon"
+                app:layout_constraintTop_toTopOf="@+id/iv_icon" />
+
+            <TextView
+                android:id="@+id/tv_device_mac"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:gravity="start"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="aaaaaaaaaaaaaaaaa"
+                app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvMyDeviceConnectState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/iv_icon"
+                app:layout_constraintBottom_toBottomOf="@id/iv_icon"
+                android:textSize="11sp"
+                android:text="has_connect"
+                android:textColor="@color/colorAccent"
+                android:layout_marginEnd="@dimen/dp_44"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <View
+                android:id="@+id/v_line"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginLeft="20dp"
+                android:background="@color/color_999999"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Unbind_1"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:background="#F8751C"
+            android:paddingHorizontal="6dp"
+            android:gravity="center" />
+    </com.guanaj.easyswipemenulibrary.EasySwipeMenuLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/v_search_bg"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="#F4F5F8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvSearchFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="search_finish"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/v_search_bg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/v_search_bg" />
+
+        <ImageView
+            android:id="@+id/ivLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/bluetooth_loading"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/v_search_bg"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvLoading"
+            app:layout_constraintTop_toTopOf="@id/v_search_bg" />
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="bluetooth_search_loading"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/v_search_bg"
+            app:layout_constraintLeft_toRightOf="@id/ivLoading"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/v_search_bg" />
+
+        <TextView
+            android:id="@+id/tvResearch"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bluetooth_research_bg"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="research"
+            android:textColor="@android:color/white"
+            android:textSize="11sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/v_search_bg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/v_search_bg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_app"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

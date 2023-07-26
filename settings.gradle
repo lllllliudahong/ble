@@ -1,0 +1,3 @@
+include ':app'
+include ':rxNetGo_lib'
+include ':bluetoothlib'

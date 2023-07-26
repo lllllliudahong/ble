@@ -1,0 +1,62 @@
+<resources>
+<!--    托克劳-->
+    <string name="app_name">FereFitNew</string>
+
+    <string name="sport_type0">游泳</string>
+    <string name="sport_type1">跳绳</string>
+    <string name="sport_type2">瑜伽</string>
+    <string name="sport_type3">健走</string>
+    <string name="sport_type4">足球</string>
+    <string name="sport_type5">篮球</string>
+    <string name="sport_type6">棒球</string>
+    <string name="sport_type7">登山</string>
+    <string name="sport_type8">划船机</string>
+    <string name="sport_type9">室内跑</string>
+    <string name="sport_type10">椭圆机</string>
+    <string name="sport_type11">户外跑</string>
+    <string name="sport_type12">室内骑行</string>
+    <string name="sport_type13">户外骑行</string>
+    <string name="sport_type14">高尔夫</string>
+    <string name="sport_type15">自由训练</string>
+    <string name="sport_type16">乒乓球</string>
+    <string name="sport_type17">羽毛球</string>
+    <string name="sport_type18">橄榄球</string>
+    <string name="sport_type19">排球</string>
+    <string name="sport_type20">仰卧起坐</string>
+    <string name="sport_type21">网球</string>
+    <string name="sport_type22">徒步</string>
+    <string name="sport_type23">拳击</string>
+    <string name="sport_type24">飞盘</string>
+    <string name="sport_type25">手摇车</string>
+    <string name="sport_type26">芭蕾</string>
+    <string name="sport_type27">钓鱼</string>
+    <string name="sport_type28">间隔训练</string>
+    <string name="sport_type29">功能性力量训练</string>
+    <string name="sport_type30">传统力量训练</string>
+    <string name="sport_type31">舞蹈</string>
+    <string name="sport_type32">混合有氧</string>
+    <string name="sport_type33">太极</string>
+    <string name="sport_type34">武术</string>
+    <string name="sport_type35">社交舞</string>
+    <string name="sport_type36">冥想</string>
+    <string name="sport_type37">核心功能</string>
+    <string name="sport_type38">冲浪</string>
+    <string name="sport_type39">手球</string>
+    <string name="sport_type40">保龄球</string>
+    <string name="sport_type41">摔跤</string>
+    <string name="sport_type42">水球</string>
+    <string name="sport_type43">水上健身</string>
+    <string name="sport_type44">澳式足球</string>
+    <string name="sport_type45">板球</string>
+    <string name="sport_type46">帆船运动</string>
+    <string name="sport_type47">冰壶</string>
+    <string name="sport_type48">打猎</string>
+    <string name="sport_type49">单板滑雪</string>
+    <string name="sport_type50">短柄墙球</string>
+    <string name="sport_type51">多项目运动</string>
+    <string name="sport_type52">曲棍球</string>
+    <string name="sport_type53">高山滑雪</string>
+    <string name="sport_type54">推动步行</string>
+    <string name="sport_type55">推动跑</string>
+
+</resources>

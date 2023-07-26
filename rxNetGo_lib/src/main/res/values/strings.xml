@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">netgo</string>
+    <string name="tv_login_out">登录过期</string>
+</resources>

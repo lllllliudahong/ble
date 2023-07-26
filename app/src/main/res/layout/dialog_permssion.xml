@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_white_radius_5"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/tv_16_color_333333"
+            android:layout_centerInParent="true"
+            android:text="您需要去设置中手动开启以下权限" />
+
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:gravity="left"
+            android:text="允许应用程序获取Wi-Fi网络状态的权限，以便能顺利登录账户。
+\n允许程序读写权限，以便保存您登录后的用户数据。
+\n允许程序定位权限，以便保存您的账户登录安全。"
+            android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/layout_content"
+            android:layout_gravity="bottom"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:background="@drawable/bg_orange_radius_3"
+            android:gravity="center"
+            android:text="confirm" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

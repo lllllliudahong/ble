@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@color/white"
+        android:gravity="center" />
+    <!--<item>-->
+        <!--<bitmap-->
+            <!--android:src="@mipmap/splash_bg" android:gravity="fill_horizontal" />-->
+    <!--</item>-->
+    <!--<item-->
+        <!--android:bottom="@dimen/dp_129"-->
+        <!--android:gravity="bottom">-->
+        <!--<bitmap-->
+            <!--android:gravity="bottom"-->
+            <!--android:src="@mipmap/logo_starting" />-->
+    <!--</item>-->
+<!--    <item-->
+<!--        android:gravity="center">-->
+<!--        <bitmap-->
+<!--            android:gravity="center"-->
+<!--            android:src="@mipmap/ic_launcher" />-->
+<!--    </item>-->
+</layer-list>
